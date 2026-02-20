@@ -1,0 +1,30 @@
+version: '3.8'
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: loanmarket-association-mongo
+    ports:
+      - '27017:27017'
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - loanmarket-network
+
+  node:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: loanmarket-association-node
+    ports:
+      - '3000:3000'
+    depends_on:
+      - mongodb
+    networks:
+      - loanmarket-network
+
+networks:
+  loanmarket-network:
+    driver: bridge
+
+volumes:
+  mongo-data:
