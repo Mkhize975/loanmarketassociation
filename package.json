@@ -1,84 +1,24 @@
 {
-  "name": "loanmarketassociation",
+  "name": "hotel-booking-app",
   "version": "1.0.0",
-  "description": "Loan Market Association - Professional website for loan market services and information",
-  "private": true,
+  "description": "A comprehensive hotel booking application.",
+  "main": "index.js",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "lint:fix": "next lint --fix",
-    "type-check": "tsc --noEmit",
-    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,css,md}\"",
-    "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,css,md}\"",
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage",
-    "analyze": "ANALYZE=true next build"
+    "start": "node server/index.js",
+    "dev": "nodemon server/index.js"
   },
   "dependencies": {
-    "next": "^14.0.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "typescript": "^5.3.0",
-    "@tailwindcss/forms": "^0.5.6",
-    "@tailwindcss/typography": "^0.5.10",
-    "tailwindcss": "^3.3.6",
-    "autoprefixer": "^10.4.16",
-    "postcss": "^8.4.31",
-    "axios": "^1.6.2",
-    "react-hook-form": "^7.48.0",
-    "zod": "^3.22.4",
-    "@hookform/resolvers": "^3.3.4",
-    "clsx": "^2.0.0",
-    "next-image-export-optimizer": "^2.2.2",
-    "framer-motion": "^10.16.4",
-    "next-seo": "^6.2.0"
+    "express": "^4.17.1",
+    "mongoose": "^5.11.15",
+    "clerk": "^2.1.0",
+    "stripe": "^8.174.0",
+    "dotenv": "^10.0.0",
+    "cors": "^2.8.5"
   },
   "devDependencies": {
-    "@types/node": "^20.10.0",
-    "@types/react": "^18.2.37",
-    "@types/react-dom": "^18.2.15",
-    "@typescript-eslint/eslint-plugin": "^6.13.1",
-    "@typescript-eslint/parser": "^6.13.1",
-    "eslint": "^8.54.0",
-    "eslint-config-next": "^14.0.0",
-    "eslint-config-prettier": "^9.0.0",
-    "prettier": "^3.1.0",
-    "prettier-plugin-tailwindcss": "^0.5.0",
-    "@testing-library/react": "^14.1.2",
-    "@testing-library/jest-dom": "^6.1.5",
-    "jest": "^29.7.0",
-    "jest-environment-jsdom": "^29.7.0",
-    "@next/bundle-analyzer": "^14.0.0",
-    "dotenv-cli": "^7.3.0"
+    "nodemon": "^2.0.7"
   },
   "engines": {
-    "node": ">=18.0.0",
-    "npm": ">=9.0.0"
-  },
-  "browserslist": [
-    "> 0.5%",
-    "last 2 versions",
-    "Firefox ESR",
-    "not dead"
-  ],
-  "keywords": [
-    "loan",
-    "market",
-    "association",
-    "financial",
-    "lending"
-  ],
-  "author": "Mkhize975",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Mkhize975/loanmarketassociation.git"
-  },
-  "bugs": {
-    "url": "https://github.com/Mkhize975/loanmarketassociation/issues"
-  },
-  "homepage": "https://github.com/Mkhize975/loanmarketassociation#readme"
+    "node": "^14.0.0"
+  }
 }
