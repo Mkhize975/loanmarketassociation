@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website Builder - Showcase Your Projects</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h1>Portfolio Builder</h1>
+                <p>Showcase Your Work</p>
+            </div>
+            <nav class="sidebar-nav">
+                <button class="nav-btn active" data-section="hero">Hero Section</button>
+                <button class="nav-btn" data-section="projects">Projects</button>
+                <button class="nav-btn" data-section="skills">Skills</button>
+                <button class="nav-btn" data-section="preview">Live Preview</button>
+                <button class="nav-btn" data-section="export">Export</button>
+            </nav>
+            <div class="sidebar-footer">
+                <p>Free Portfolio Website Builder</p>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Hero Section Editor -->
+            <section id="hero" class="editor-section active">
+                <div class="section-header">
+                    <h2>Hero Section</h2>
+                    <p>Customize your portfolio's first impression</p>
+                </div>
+                <div class="editor-form">
+                    <div class="form-group">
+                        <label>Your Name</label>
+                        <input type="text" id="heroName" placeholder="Enter your name" value="Mkhize975">
+                    </div>
+                    <div class="form-group">
+                        <label>Professional Title</label>
+                        <input type="text" id="heroTitle" placeholder="e.g., Full Stack Developer" value="Full Stack Developer & Project Enthusiast">
+                    </div>
+                    <div class="form-group">
+                        <label>Bio/Description</label>
+                        <textarea id="heroBio" placeholder="Write a brief bio about yourself" rows="4">Passionate developer creating innovative solutions with TypeScript, JavaScript, Java, and Python. Building projects that matter.</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>GitHub Username</label>
+                        <input type="text" id="githubUsername" placeholder="Your GitHub username" value="Mkhize975">
+                    </div>
+                    <div class="form-group">
+                        <label>Hero Background Color</label>
+                        <input type="color" id="heroBgColor" value="#1a1a2e">
+                    </div>
+                    <button class="btn btn-primary" onclick="updateHero()">Update Hero Section</button>
+                </div>
+            </section>
+
+            <!-- Projects Section Editor -->
+            <section id="projects" class="editor-section">
+                <div class="section-header">
+                    <h2>Your Projects</h2>
+                    <p>Manage and display your GitHub repositories</p>
+                </div>
+                <div class="projects-editor">
+                    <div id="projectsList" class="projects-list"></div>
+                    <button class="btn btn-secondary" onclick="addCustomProject()">+ Add Custom Project</button>
+                </div>
+            </section>
+
+            <!-- Skills Section Editor -->
+            <section id="skills" class="editor-section">
+                <div class="section-header">
+                    <h2>Skills & Technologies</h2>
+                    <p>Highlight your technical expertise</p>
+                </div>
+                <div class="skills-editor">
+                    <div id="skillsList" class="skills-list"></div>
+                    <div class="form-group">
+                        <label>Add New Skill</label>
+                        <div class="skill-input-group">
+                            <input type="text" id="newSkillName" placeholder="Skill name">
+                            <select id="newSkillCategory">
+                                <option value="Frontend">Frontend</option>
+                                <option value="Backend">Backend</option>
+                                <option value="Database">Database</option>
+                                <option value="Tools">Tools</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            <button class="btn btn-primary" onclick="addSkill()">Add</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Live Preview -->
+            <section id="preview" class="editor-section">
+                <div class="section-header">
+                    <h2>Live Preview</h2>
+                    <p>See how your portfolio looks</p>
+                </div>
+                <div class="preview-container">
+                    <iframe id="previewFrame" class="preview-frame" sandbox="allow-same-origin"></iframe>
+                </div>
+                <button class="btn btn-primary" onclick="updatePreview()">Refresh Preview</button>
+            </section>
+
+            <!-- Export Section -->
+            <section id="export" class="editor-section">
+                <div class="section-header">
+                    <h2>Export Your Portfolio</h2>
+                    <p>Download or deploy your portfolio website</p>
+                </div>
+                <div class="export-options">
+                    <div class="export-card">
+                        <i class="fas fa-download"></i>
+                        <h3>Download as ZIP</h3>
+                        <p>Get all files as a ZIP archive</p>
+                        <button class="btn btn-primary" onclick="downloadPortfolio()">Download ZIP</button>
+                    </div>
+                    <div class="export-card">
+                        <i class="fas fa-code"></i>
+                        <h3>Copy HTML</h3>
+                        <p>Copy the complete HTML code</p>
+                        <button class="btn btn-primary" onclick="copyHtmlCode()">Copy Code</button>
+                    </div>
+                    <div class="export-card">
+                        <i class="fas fa-globe"></i>
+                        <h3>Share Preview</h3>
+                        <p>Get a shareable preview link</p>
+                        <button class="btn btn-primary" onclick="sharePreview()">Generate Link</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Preview Panel -->
+        <aside class="preview-panel">
+            <div class="preview-header">
+                <h3>Mobile Preview</h3>
+            </div>
+            <div id="mobilePreview" class="mobile-preview"></div>
+        </aside>
+    </div>
+
+    <!-- Hidden Portfolio Template -->
+    <div id="portfolioTemplate" style="display: none;"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
