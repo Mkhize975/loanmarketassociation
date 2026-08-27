@@ -1,0 +1,6 @@
+{
+  "name": "Sun City Restaurants | Sun International",
+  "description": "Explore and book dining experiences at Sun City Resort by Sun International. Featuring fine dining, casual eateries, buffets, bars, and Halaal options across The Palace, Cascades, Soho, and Sun Central.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
